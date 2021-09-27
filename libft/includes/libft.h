@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 16:54:10 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/27 18:12:39 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/27 20:44:49 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,6 @@ char			*ft_strupcase(char *str);
 int				get_next_line(int fd, char **line);
 char			*ft_gnl_strjoin(char **s1, const char *s2);
 int				ft_loop(char *ptr, int *ret, int *fd, char *data);
-char			*ft_free_strjoin(const char *s1, const char *s2);
+char			*ft_free_strjoin(char *s1, char *s2);
 
 #endif

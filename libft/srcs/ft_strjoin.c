@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 13:36:24 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/27 18:14:41 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/27 20:44:31 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	return (ptr);
 }
 
-char	*ft_free_strjoin(const char *s1, const char *s2)
+char	*ft_free_strjoin(char *s1, char *s2)
 {
 	char	*output;
 
