@@ -6,11 +6,11 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 12:37:07 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/07/19 19:30:11 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/27 18:01:05 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 static int	ft_fnext(char *str)
 {
@@ -42,13 +42,13 @@ static char	*ft_staticclean(char **ptr)
 
 int	get_next_line(int fd, char **line)
 {
-	char		data[BUFFER_SIZE + 1];
+	char		data[GNL_BUFFER_SIZE + 1];
 	static char	*ptr;
 	int			ret;
 
-	if (fd < 0 || !line || BUFFER_SIZE < 1 || read(fd, data, 0) < 0)
+	if (fd < 0 || !line || GNL_BUFFER_SIZE < 1 || read(fd, data, 0) < 0)
 		return (-1);
-	ret = read(fd, data, BUFFER_SIZE);
+	ret = read(fd, data, GNL_BUFFER_SIZE);
 	data[ret] = '\0';
 	ptr = ft_gnl_strjoin(&ptr, data);
 	ft_loop(ptr, &ret, &fd, data);
@@ -66,14 +66,14 @@ int	get_next_line(int fd, char **line)
 
 /*
 **Had to remove
-** while ((ft_fnext(ptr) < 0) && ((ret = read(fd, data, BUFFER_SIZE)) > 0))
+**while ((ft_fnext(ptr) < 0) && ((ret = read(fd, data, GNL_BUFFER_SIZE)) > 0))
 */
 
 int	ft_loop(char *ptr, int *ret, int *fd, char *data)
 {
 	while (ft_fnext(ptr) < 0)
 	{
-		*ret = read(*fd, data, BUFFER_SIZE);
+		*ret = read(*fd, data, GNL_BUFFER_SIZE);
 		if (*ret > 0)
 		{
 			data[*ret] = '\0';

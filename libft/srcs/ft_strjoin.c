@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 13:36:24 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/07/09 13:17:32 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/27 18:14:41 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,17 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	ft_memcpy(ptr + ft_strlen(s1), s2, ft_strlen(s2));
 	ptr[len] = '\0';
 	return (ptr);
+}
+
+char	*ft_free_strjoin(const char *s1, const char *s2)
+{
+	char	*output;
+
+	output = NULL;
+	output = ft_strjoin(s1, s2);
+	if (s1)
+		free(s1);
+	if (s2)
+		free(s2);
+	return (output);
 }

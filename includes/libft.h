@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 16:54:10 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/22 16:14:42 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/27 18:12:54 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,16 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <stdio.h>
+# include <fcntl.h>
+# include <sys/stat.h>
+
 # define ASCII 0x30
+# define FDLIMIT 256
+
+# ifndef GNL_BUFFER_SIZE
+#  define GNL_BUFFER_SIZE 32
+# endif
 
 typedef struct s_list
 {
@@ -71,5 +80,9 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*d)(void *));
 char			*ft_itoa_hex(unsigned long hex);
 char			*ft_utoa(unsigned int n);
 char			*ft_strupcase(char *str);
+int				get_next_line(int fd, char **line);
+char			*ft_gnl_strjoin(char **s1, const char *s2);
+int				ft_loop(char *ptr, int *ret, int *fd, char *data);
+char			*ft_free_strjoin(const char *s1, const char *s2);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 15:41:11 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/24 17:57:21 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/27 16:32:30 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,6 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 
 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
 	*(unsigned int *)dst = color;
-}
-
-t_map	*ft_parse(char *argv)
-{
-	t_map *map;
-	open = argv;
-
 }
 
 int	main(int argc, char **argv)
