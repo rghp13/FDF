@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 12:45:50 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/27 18:18:25 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/28 15:49:43 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ t_map	*ft_set_structs(int fd)
 	char	*text;
 	char	*hold;
 	int		flag;
+	int		x;
+	t_map	*map;
 
 	text = NULL;
 	hold = NULL;
@@ -34,11 +36,54 @@ t_map	*ft_set_structs(int fd)
 	{
 		if (flag++ == 0)
 		{
-			ft_x_count(hold);//count the number of entries on the first line
+			x = ft_get_word_tally(hold, ' ');
 		}
 		if (text == NULL)
 			text = hold;
 		else
 			text = ft_free_strjoin(text, hold);
 	}
+	map = ft_init_map(x, flag);
+	map = ft_write_to_map(map, text);
+	return (map);
+}
+
+/*
+**malloc all the things
+*/
+
+t_map	*ft_init_map(int x, int y)
+{
+	t_map	*map;
+	int		i;
+
+	i = 0;
+	map = NULL;
+	map = malloc(sizeof(t_map));
+	if (map == NULL)
+		ft_error(1);
+	map->x = x;
+	map->y = y;
+	map->array = NULL;
+	map->array = malloc(sizeof(t_point *) * y);
+	if (map->array == NULL)
+		ft_free_error(1, map);
+	while (i < x)
+	{
+		map->array[i] = NULL;
+		map->array[i] = malloc(sizeof(t_point) * x);
+		if (map->array[i] == NULL)
+			ft_free_error(1, map);
+		i++;
+	}
+	return (map);
+}
+
+/*
+**put the text in
+*/
+
+t_map	*ft_write_to_map(t_map *map, char *text)
+{
+	;
 }

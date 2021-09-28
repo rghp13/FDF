@@ -6,9 +6,18 @@
 #    By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/24 15:09:42 by rponsonn          #+#    #+#              #
-#    Updated: 2021/09/27 16:40:14 by rponsonn         ###   ########.fr        #
+#    Updated: 2021/09/28 13:50:55 by rponsonn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+NC = \033[0m
+RED = \033[0;91m
+ORANGE = \033[93m
+GREEN = \x1b[32m
+PURPLE = \033[0;95m
+BLUE = \033[0;34m
+BOLD = \033[1m
+CYAN = \x1b[36m
 
 PATH_SRC		=	./srcs/
 PATH_HEAD		=	./includes/
@@ -33,15 +42,18 @@ CFLAGS			=	-Wall -Wextra -Werror
 
 .c.o:
 				@${CC} ${CFLAGS} -I${PATH_HEAD} -c $< -o ${<:.c=.o}
+				@echo "${GREEN}[ OK ] ${CYAN}${BOLD}${<:.s=.o}${NC}${NC}"
 
 ${NAME}:		${OBJS}
 				@ar -rcs ${NAME} ${OBJS}
 all:			${NAME}
 
 clean:			
-				${RM} ${OBJS} ${BOBJS}
+				@${RM} ${OBJS}
+				@echo "\n${GREEN}[ OK ]${RED}    *.o files deleted${NC}"
 fclean:			clean
-				${RM} ${NAME}
+				@${RM} ${NAME}
+				@echo "${GREEN}[ OK ]${RED}    libft.a    deleted${NC}"
 re:				fclean ${NAME}
 bonus:			${NAME}
 .PHONY:			all clean fclean re bonus

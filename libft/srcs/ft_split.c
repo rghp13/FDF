@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 12:58:35 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/07/09 13:16:28 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/28 13:04:39 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static char	*ft_get_string(int *end, const char *s, char c)
 	return (ptr);
 }
 
-static int	ft_get_word_tally(const char *s, char c)
+int	ft_get_word_tally(const char *s, char c)
 {
 	int	num;
 	int	words;

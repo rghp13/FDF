@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fdf.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 15:41:11 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/27 21:01:08 by romain           ###   ########.fr       */
+/*   Updated: 2021/09/28 14:45:26 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	*(unsigned int *)dst = color;
 }
 
-int	main(int argc, char **argv)
+int	main(void)
 {
 	void	*mlx;
 	void	*mlx_win;
 	t_data	img;
-	t_map	*map;
+	//t_map	*map;
 
-	map = ft_parse(argv[1]);
+	//map = ft_parse(argv[1]);
 	mlx = mlx_init();
 	mlx_win = mlx_new_window(mlx, XSIZE, YSIZE, "Hello World!");
 	img.img = mlx_new_image(mlx, XSIZE, YSIZE);

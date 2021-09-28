@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 14:10:44 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/27 17:59:09 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/28 14:36:10 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ typedef struct s_point {
 
 typedef struct s_map {
 	t_point	**array;
+	int		x;
+	int		y;
 }			t_map;
 
 #endif
