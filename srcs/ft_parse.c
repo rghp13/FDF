@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 12:45:50 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/28 15:49:43 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/28 18:20:43 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_map	*ft_parse(char *argv)
 
 	fd = open(argv, O_RDONLY);
 	map = ft_set_structs(fd);
+	close(fd);
 }
 
 t_map	*ft_set_structs(int fd)
@@ -44,7 +45,9 @@ t_map	*ft_set_structs(int fd)
 			text = ft_free_strjoin(text, hold);
 	}
 	map = ft_init_map(x, flag);
+	ft_fill_color(map);
 	map = ft_write_to_map(map, text);
+	free(text);
 	return (map);
 }
 
@@ -85,5 +88,29 @@ t_map	*ft_init_map(int x, int y)
 
 t_map	*ft_write_to_map(t_map *map, char *text)
 {
-	;
+	int		i;
+	char	**split;
+	int		x;
+	int		y;
+	char	*fltptr;
+
+	i = 0;
+	x = 0;
+	y = 0;
+	split = ft_split(text, ' ');
+	while (split[i])
+	{
+		fltptr = NULL;
+		map->array[y][x].z = ft_atoi(split[i]);
+		fltptr = ft_strchr(split[i++], ',');
+		if (fltptr)
+			map->array[y][x].color = ft_get_color(fltptr);
+		if (++x >= map->x)
+		{
+			x = 0;
+			y++;
+		}
+	}
+	ft_free_split(split);
+	return (map);
 }
