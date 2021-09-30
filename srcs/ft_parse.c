@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 12:45:50 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/30 16:27:16 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/30 17:30:21 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ t_map	*ft_write_to_map(t_map *map)
 **just need to remove the 0x prefix and complete the hex value
 */
 
-int	ft_get_color(char *ptr)
+unsigned int	ft_get_color(char *ptr)
 {
 	int		i;
 	int		len;

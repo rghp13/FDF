@@ -6,7 +6,7 @@
 #    By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/24 15:09:42 by rponsonn          #+#    #+#              #
-#    Updated: 2021/09/28 13:50:55 by rponsonn         ###   ########.fr        #
+#    Updated: 2021/09/30 17:17:13 by rponsonn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ SRCS			=	${PATH_SRC}ft_memset.c ${PATH_SRC}ft_bzero.c ${PATH_SRC}ft_memcpy.c ${P
 					${PATH_SRC}ft_utoa.c ${PATH_SRC}ft_strupper.c ${PATH_SRC}ft_atol.c ${PATH_SRC}ft_itoa_hex.c \
 					${PATH_SRC}ft_lstnew.c ${PATH_SRC}ft_lstadd_front.c ${PATH_SRC}ft_lstsize.c ${PATH_SRC}ft_lstlast.c \
 					${PATH_SRC}ft_lstadd_back.c ${PATH_SRC}ft_lstdelone.c ${PATH_SRC}ft_lstclear.c ${PATH_SRC}ft_lstiter.c \
-					${PATH_SRC}ft_lstmap.c ${PATH_SRC}get_next_line_utils.c ${PATH_SRC}get_next_line.c
+					${PATH_SRC}ft_lstmap.c ${PATH_SRC}get_next_line_utils.c ${PATH_SRC}get_next_line.c ${PATH_SRC}ft_hex_str_to_int.c
 OBJS			=	$(SRCS:.c=.o)
 
 NAME			=	libft.a

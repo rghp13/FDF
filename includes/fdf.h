@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 14:10:44 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/30 14:53:12 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/30 17:18:14 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ typedef struct s_data {
 }				t_data;
 
 typedef struct s_point {
-	float	x;
-	float	y;
-	float	z;
-	int		color;
+	float			x;
+	float			y;
+	float			z;
+	unsigned int	color;
 }			t_point;
 
 typedef struct s_map {
