@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 12:45:50 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/30 17:30:21 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/30 20:31:49 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ unsigned int	ft_get_color(char *ptr)
 	if (ptr[0] == '0' && (ptr[1] == 'x' || ptr[1] == 'X'))
 		ptr += 2;
 	len = ft_strlen(ptr);
-	while (i < len)
+	while (i < len)//Don't forget to prefix with 2 0's
 		hex[i] = ptr[i];
 	while (i < 8)
 		hex[i] = '0';
