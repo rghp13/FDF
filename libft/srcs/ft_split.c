@@ -6,11 +6,15 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 12:58:35 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/28 13:04:39 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/29 15:11:19 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+**split string s along occurences of c. returns array of strings
+*/
 
 static char	*ft_get_string(int *end, const char *s, char c)
 {

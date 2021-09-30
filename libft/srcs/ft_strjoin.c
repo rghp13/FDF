@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 13:36:24 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/27 20:44:31 by romain           ###   ########.fr       */
+/*   Updated: 2021/09/29 15:14:00 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+**take s1 and s2 and merges them into a 3rd string
+*/
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {
@@ -28,6 +32,11 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	ptr[len] = '\0';
 	return (ptr);
 }
+
+/*
+**if you want to free the s1 and s2 then use this
+**will free even if the strjoin fails
+*/
 
 char	*ft_free_strjoin(char *s1, char *s2)
 {

@@ -1,16 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memccpy.c                                          :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/06 14:44:28 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/01/26 15:09:29 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/29 15:01:12 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+**the function copies bytes from string src into string dst. if the character c
+**as an unsigned char occurs in src, copy stops, and a pointer to the byte after
+**the copy of c in the string dst is returned. otherwise n bytes are copied
+**and null is returned
+*/
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {

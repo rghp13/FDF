@@ -1,16 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memchr.c                                           :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:07:56 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/01/19 14:33:50 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/29 15:02:37 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+**the function locates the first occurence of c in s
+**returns pointer to it or NULL if can't be found within n bytes
+*/
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -29,5 +34,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

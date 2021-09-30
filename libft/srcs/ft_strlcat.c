@@ -6,11 +6,15 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 12:53:27 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/07/09 13:17:53 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/29 15:14:16 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+**despair all ye who use this function
+*/
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

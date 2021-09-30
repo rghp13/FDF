@@ -6,11 +6,16 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 12:50:19 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/07/09 13:33:21 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/29 15:59:58 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+**this function makes a substring by starting from string s at position start
+**it copies len number of chars but will not go past any null terminator
+*/
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

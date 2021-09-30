@@ -6,11 +6,16 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 14:18:02 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/07/09 13:23:51 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/29 15:45:39 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+**the function locates the first occurence of the needle in the string haystack
+**where not more than len characters are searched, doesn't search after a \0
+*/
 
 static int	ft_str_check(const char *haystack, const char *needle, int nlen)
 {

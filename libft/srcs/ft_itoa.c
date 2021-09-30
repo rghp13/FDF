@@ -6,11 +6,15 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 15:21:06 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/07/09 12:22:30 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/29 14:43:19 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+**Converts an int into a string
+*/
 
 static char	*ft_arr2str(char *arr, int neg, int max)
 {

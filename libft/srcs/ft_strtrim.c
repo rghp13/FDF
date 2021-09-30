@@ -6,11 +6,16 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 15:32:47 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/07/09 13:25:44 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/29 15:50:01 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+**looks at the start and end of the string for any chars in the set
+**if found you'll get a trimmed string starting from set
+*/
 
 static int	ft_check_set(const char s1, const char *set)
 {

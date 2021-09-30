@@ -6,11 +6,15 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 14:26:16 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/07/09 13:17:04 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/29 15:12:00 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+**duplicates s1 returns the duplicated string
+*/
 
 char	*ft_strdup(const char *s1)
 {

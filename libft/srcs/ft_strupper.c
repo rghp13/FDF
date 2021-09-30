@@ -6,12 +6,16 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 21:52:50 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/07/09 13:26:09 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/29 15:50:29 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #define UPPER 32
+
+/*
+**capitalize all letters
+*/
 
 char	*ft_strupcase(char *str)
 {

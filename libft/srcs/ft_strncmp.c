@@ -1,16 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strncmp.c                                          :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 16:31:06 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/01/19 14:44:32 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/29 15:44:16 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+**the function lexicographically compares the null terminated string s1 and s2
+**does not compare more than n characters however and data after a \0 will not
+**be compared
+*/
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

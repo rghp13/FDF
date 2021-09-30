@@ -1,16 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlcpy.c                                          :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 15:06:48 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/01/26 15:50:05 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/29 15:14:29 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+**despair all ye who use this function
+*/
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
