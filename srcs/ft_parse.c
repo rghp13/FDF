@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 12:45:50 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/28 18:20:43 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/30 16:27:16 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,17 @@ t_map	*ft_set_structs(int fd)
 	while (get_next_line(fd, &hold))
 	{
 		if (flag++ == 0)
-		{
 			x = ft_get_word_tally(hold, ' ');
-		}
 		if (text == NULL)
 			text = hold;
 		else
 			text = ft_free_strjoin(text, hold);
 	}
-	map = ft_init_map(x, flag);
+	map = ft_init_map(x, flag, text);
+	if (ft_get_word_tally(text, ' ') != (x * flag))
+		ft_free_error(2, map);
 	ft_fill_color(map);
-	map = ft_write_to_map(map, text);
+	map = ft_write_to_map(map);
 	free(text);
 	return (map);
 }
@@ -55,25 +55,26 @@ t_map	*ft_set_structs(int fd)
 **malloc all the things
 */
 
-t_map	*ft_init_map(int x, int y)
+t_map	*ft_init_map(int x, int y, char *text)
 {
 	t_map	*map;
 	int		i;
 
 	i = 0;
-	map = NULL;
 	map = malloc(sizeof(t_map));
 	if (map == NULL)
+	{
+		free(text);
 		ft_error(1);
+	}
+	map->gnl_text = text;
 	map->x = x;
 	map->y = y;
-	map->array = NULL;
 	map->array = malloc(sizeof(t_point *) * y);
 	if (map->array == NULL)
 		ft_free_error(1, map);
-	while (i < x)
+	while (i < y)
 	{
-		map->array[i] = NULL;
 		map->array[i] = malloc(sizeof(t_point) * x);
 		if (map->array[i] == NULL)
 			ft_free_error(1, map);
@@ -86,31 +87,51 @@ t_map	*ft_init_map(int x, int y)
 **put the text in
 */
 
-t_map	*ft_write_to_map(t_map *map, char *text)
+t_map	*ft_write_to_map(t_map *map)
 {
 	int		i;
 	char	**split;
-	int		x;
-	int		y;
 	char	*fltptr;
 
 	i = 0;
-	x = 0;
-	y = 0;
-	split = ft_split(text, ' ');
+	split = ft_split(map->gnl_text, ' ');
 	while (split[i])
 	{
 		fltptr = NULL;
-		map->array[y][x].z = ft_atoi(split[i]);
-		fltptr = ft_strchr(split[i++], ',');
+		map->array[i / map->x][i % map->x].x = i % map->x;
+		map->array[i / map->x][i % map->x].y = i / map->x;
+		map->array[i / map->x][i % map->x].z = ft_atoi(split[i]);
+		fltptr = ft_strchr(split[i], ',');
 		if (fltptr)
-			map->array[y][x].color = ft_get_color(fltptr);
-		if (++x >= map->x)
-		{
-			x = 0;
-			y++;
-		}
+			map->array[i / map->x][i % map->x].color = ft_get_color(fltptr);
+		i++;
 	}
 	ft_free_split(split);
 	return (map);
+}
+
+/*
+**Making a libft function that'll take hex string and conv to int
+**just need to remove the 0x prefix and complete the hex value
+*/
+
+int	ft_get_color(char *ptr)
+{
+	int		i;
+	int		len;
+	char	hex[8];
+
+	ptr++;
+	len = ft_strlen(ptr);
+	i = 0;
+	if (len < 2)
+		return (0);
+	if (ptr[0] == '0' && (ptr[1] == 'x' || ptr[1] == 'X'))
+		ptr += 2;
+	len = ft_strlen(ptr);
+	while (i < len)
+		hex[i] = ptr[i];
+	while (i < 8)
+		hex[i] = '0';
+	return (ft_hex_str_to_int(hex));
 }

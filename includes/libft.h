@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 16:54:10 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/28 13:04:14 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/30 15:21:06 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,6 @@ char			*ft_gnl_strjoin(char **s1, const char *s2);
 int				ft_loop(char *ptr, int *ret, int *fd, char *data);
 char			*ft_free_strjoin(char *s1, char *s2);
 int				ft_get_word_tally(const char *s, char c);
+int				ft_free_split(char **split);
 
 #endif

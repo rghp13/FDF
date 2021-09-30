@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 12:58:35 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/29 15:11:19 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/30 15:20:24 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,20 @@ char	**ft_split(const char *s, char c)
 		tab[i++] = ft_get_string(&endpoint, s, c);
 	}
 	return (tab);
+}
+
+int	ft_free_split(char **split)
+{
+	int	i;
+
+	i = 0;
+	if (split == NULL)
+		return (0);
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+	return (0);
 }

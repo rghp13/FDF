@@ -6,7 +6,7 @@
 /*   By: rponsonn <rponsonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 14:10:44 by rponsonn          #+#    #+#             */
-/*   Updated: 2021/09/28 15:58:07 by rponsonn         ###   ########.fr       */
+/*   Updated: 2021/09/30 14:53:12 by rponsonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,15 @@ typedef struct s_map {
 	t_point	**array;
 	int		x;
 	int		y;
+	char	*gnl_text;
 }			t_map;
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 t_map	*ft_parse(char *argv);
 t_map	*ft_set_structs(int fd);
-t_map	*ft_init_map(int x, int y);
-t_map	*ft_write_to_map(t_map *map, char *text);
+t_map	*ft_init_map(int x, int y, char *text);
+t_map	*ft_write_to_map(t_map *map);
+void	ft_free_error(int erno, t_map *map);
+void	ft_free(t_map *map);
 
 #endif
